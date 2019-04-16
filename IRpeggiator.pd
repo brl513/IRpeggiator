@@ -1,0 +1,1576 @@
+#N canvas 0 23 1440 738 10;
+#X floatatom 820 1096 5 0 0 0 - - -;
+#X obj 80 461 ctlin 23 1;
+#X obj 805 1169 mtof;
+#X floatatom 805 1210 5 0 0 0 - - -;
+#X obj 805 1246 phasor~;
+#X obj 805 1284 *~;
+#X obj 1107 1579 dac~;
+#X obj 1171 1038 tgl 15 0 empty power_switch empty 0 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 805 1121 +;
+#X obj 887 1269 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X text 1292 1150 How long the note is heard for in ms;
+#X text 1001 1018 How long the interval between notes is;
+#X obj 1255 1123 -;
+#X floatatom 1255 1149 5 0 0 0 - - -;
+#X obj 968 1253 delay;
+#X obj 1171 1061 metro;
+#X floatatom 1253 1033 5 0 0 0 - - -;
+#X obj 1368 872 vsl 15 128 0.01 0.81 0 0 empty empty empty 0 -9 0 10
+-262144 -1 -1 0 1;
+#X obj 1270 1067 *;
+#X obj 1368 1017 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144
+-1 -1;
+#X obj 1211 1505 hip~;
+#X obj 886 851 vsl 15 128 -4 4 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6350 1;
+#N canvas 953 54 450 300 cycle_triad 0;
+#X obj 264 133 cycle 4;
+#X obj 149 29 r symfoo;
+#X msg 177 240 4;
+#X msg 214 240 7;
+#X msg 251 240 12;
+#X msg 140 240 0;
+#X obj 264 191 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 294 191 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 325 191 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 355 191 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 439 245 s delaybox;
+#X obj 352 245 s togglebox;
+#X obj 174 293 s addstep;
+#X obj 355 134 cycle 4;
+#X obj 313 -34 hradio 15 1 0 2 empty direction empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 313 97 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 264 96 spigot;
+#X obj 264 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 149 58 spigot;
+#X obj 198 59 tgl 15 0 empty triad_switch empty 17 7 0 10 -262144 -1
+-1 1 1;
+#X obj 410 97 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 355 96 spigot;
+#X obj 355 72 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 313 9 route 0 1 2;
+#X text 117 258 Steps that make a major triad;
+#X connect 0 0 6 0;
+#X connect 0 1 7 0;
+#X connect 0 2 8 0;
+#X connect 0 3 9 0;
+#X connect 1 0 18 0;
+#X connect 2 0 12 0;
+#X connect 3 0 12 0;
+#X connect 4 0 12 0;
+#X connect 5 0 12 0;
+#X connect 6 0 5 0;
+#X connect 6 0 11 0;
+#X connect 6 0 10 0;
+#X connect 7 0 2 0;
+#X connect 7 0 11 0;
+#X connect 7 0 10 0;
+#X connect 8 0 3 0;
+#X connect 8 0 11 0;
+#X connect 8 0 10 0;
+#X connect 9 0 4 0;
+#X connect 9 0 11 0;
+#X connect 9 0 10 0;
+#X connect 13 0 9 0;
+#X connect 13 1 8 0;
+#X connect 13 2 7 0;
+#X connect 13 3 6 0;
+#X connect 14 0 23 0;
+#X connect 15 0 16 1;
+#X connect 16 0 15 0;
+#X connect 16 0 0 0;
+#X connect 17 0 16 0;
+#X connect 18 0 16 0;
+#X connect 18 0 21 0;
+#X connect 19 0 18 1;
+#X connect 20 0 21 1;
+#X connect 21 0 20 0;
+#X connect 21 0 13 0;
+#X connect 22 0 21 0;
+#X connect 23 0 15 0;
+#X connect 23 0 22 0;
+#X connect 23 1 17 0;
+#X connect 23 1 20 0;
+#X connect 23 2 17 0;
+#X connect 23 2 22 0;
+#X restore 660 -34 pd cycle_triad;
+#X obj 887 1197 r togglebox;
+#X obj 968 1197 r delaybox;
+#X obj 1171 1109 s symfoo;
+#X obj 714 1095 r addstep;
+#N canvas 905 519 450 300 cycle_majorscale 0;
+#X obj 112 79 spigot;
+#X obj 145 31 tgl 15 0 empty majorscale_switch empty 0 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 78 29 r symfoo;
+#X obj 420 381 s delaybox;
+#X obj 339 381 s togglebox;
+#X obj 84 427 s addstep;
+#X msg -14 386 2;
+#X msg 23 386 4;
+#X msg 60 386 5;
+#X msg 97 386 7;
+#X msg 134 386 9;
+#X msg 171 386 11;
+#X msg 208 386 12;
+#X msg -51 325 0;
+#X obj 102 232 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 128 232 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 154 232 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 180 232 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 24 232 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 50 232 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 76 232 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 206 232 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 112 180 cycle 8;
+#X obj 275 -23 hradio 15 1 0 2 empty direction empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 328 108 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 273 107 spigot;
+#X obj 273 75 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 416 108 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 361 107 spigot;
+#X obj 361 75 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 275 20 route 0 1 2;
+#X obj 459 55 random;
+#X obj 174 181 cycle 8;
+#X text 161 411 Steps for major scale;
+#X connect 0 0 25 0;
+#X connect 0 0 28 0;
+#X connect 1 0 0 1;
+#X connect 2 0 0 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
+#X connect 9 0 5 0;
+#X connect 10 0 5 0;
+#X connect 11 0 5 0;
+#X connect 12 0 5 0;
+#X connect 13 0 5 0;
+#X connect 14 0 4 0;
+#X connect 14 0 3 0;
+#X connect 14 0 8 0;
+#X connect 15 0 4 0;
+#X connect 15 0 3 0;
+#X connect 15 0 9 0;
+#X connect 16 0 4 0;
+#X connect 16 0 3 0;
+#X connect 16 0 10 0;
+#X connect 17 0 4 0;
+#X connect 17 0 3 0;
+#X connect 17 0 11 0;
+#X connect 18 0 4 0;
+#X connect 18 0 3 0;
+#X connect 18 0 13 0;
+#X connect 19 0 4 0;
+#X connect 19 0 3 0;
+#X connect 19 0 6 0;
+#X connect 20 0 4 0;
+#X connect 20 0 3 0;
+#X connect 20 0 7 0;
+#X connect 21 0 4 0;
+#X connect 21 0 3 0;
+#X connect 21 0 12 0;
+#X connect 22 0 18 0;
+#X connect 22 1 19 0;
+#X connect 22 2 20 0;
+#X connect 22 3 14 0;
+#X connect 22 4 15 0;
+#X connect 22 5 16 0;
+#X connect 22 6 17 0;
+#X connect 22 7 21 0;
+#X connect 23 0 30 0;
+#X connect 24 0 25 1;
+#X connect 25 0 24 0;
+#X connect 25 0 22 0;
+#X connect 26 0 25 0;
+#X connect 27 0 28 1;
+#X connect 28 0 27 0;
+#X connect 28 0 32 0;
+#X connect 29 0 28 0;
+#X connect 30 0 24 0;
+#X connect 30 0 29 0;
+#X connect 30 1 26 0;
+#X connect 30 1 27 0;
+#X connect 30 2 26 0;
+#X connect 30 2 29 0;
+#X connect 32 0 21 0;
+#X connect 32 1 17 0;
+#X connect 32 2 16 0;
+#X connect 32 3 15 0;
+#X connect 32 4 14 0;
+#X connect 32 5 20 0;
+#X connect 32 6 19 0;
+#X connect 32 7 18 0;
+#X restore 660 7 pd cycle_majorscale;
+#N canvas 0 23 1440 784 cycle_chromatic 0;
+#X obj 212 79 spigot;
+#X obj 245 31 tgl 15 0 empty chromatic_switch empty 0 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 178 29 r symfoo;
+#X obj 262 321 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 288 321 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 314 321 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 340 321 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 529 535 s delaybox;
+#X obj 442 535 s togglebox;
+#X obj 80 541 s addstep;
+#X msg -175 478 2;
+#X msg -90 478 4;
+#X msg -43 478 5;
+#X msg 57 478 7;
+#X msg 144 478 9;
+#X msg 229 478 11;
+#X msg 270 478 12;
+#X msg -251 478 0;
+#X obj 132 321 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 158 321 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 184 321 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 210 321 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 54 321 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 80 321 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 106 321 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 236 321 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg -217 478 1;
+#X msg -131 478 3;
+#X msg 8 479 6;
+#X msg 102 478 8;
+#X msg 192 478 10;
+#X obj 363 320 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 323 32 hradio 15 1 0 2 empty direction empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 376 163 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 321 162 spigot;
+#X obj 321 130 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 464 163 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 409 162 spigot;
+#X obj 409 130 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 323 75 route 0 1 2;
+#X obj 202 262 cycle 16;
+#X obj 295 262 cycle 16;
+#X text -119 539 Steps for chromatic scale;
+#X connect 0 0 34 0;
+#X connect 0 0 37 0;
+#X connect 1 0 0 1;
+#X connect 2 0 0 0;
+#X connect 3 0 8 0;
+#X connect 3 0 7 0;
+#X connect 3 0 29 0;
+#X connect 4 0 8 0;
+#X connect 4 0 7 0;
+#X connect 4 0 14 0;
+#X connect 5 0 8 0;
+#X connect 5 0 7 0;
+#X connect 5 0 30 0;
+#X connect 6 0 8 0;
+#X connect 6 0 7 0;
+#X connect 6 0 15 0;
+#X connect 10 0 9 0;
+#X connect 11 0 9 0;
+#X connect 12 0 9 0;
+#X connect 13 0 9 0;
+#X connect 14 0 9 0;
+#X connect 15 0 9 0;
+#X connect 16 0 9 0;
+#X connect 17 0 9 0;
+#X connect 18 0 8 0;
+#X connect 18 0 7 0;
+#X connect 18 0 27 0;
+#X connect 19 0 8 0;
+#X connect 19 0 7 0;
+#X connect 19 0 11 0;
+#X connect 20 0 8 0;
+#X connect 20 0 7 0;
+#X connect 20 0 12 0;
+#X connect 21 0 8 0;
+#X connect 21 0 7 0;
+#X connect 21 0 28 0;
+#X connect 22 0 8 0;
+#X connect 22 0 7 0;
+#X connect 22 0 17 0;
+#X connect 23 0 8 0;
+#X connect 23 0 7 0;
+#X connect 23 0 26 0;
+#X connect 24 0 8 0;
+#X connect 24 0 7 0;
+#X connect 24 0 10 0;
+#X connect 25 0 8 0;
+#X connect 25 0 7 0;
+#X connect 25 0 13 0;
+#X connect 26 0 9 0;
+#X connect 27 0 9 0;
+#X connect 28 0 9 0;
+#X connect 29 0 9 0;
+#X connect 30 0 9 0;
+#X connect 31 0 16 0;
+#X connect 31 0 8 0;
+#X connect 31 0 7 0;
+#X connect 32 0 39 0;
+#X connect 33 0 34 1;
+#X connect 34 0 33 0;
+#X connect 34 0 40 0;
+#X connect 35 0 34 0;
+#X connect 36 0 37 1;
+#X connect 37 0 36 0;
+#X connect 37 0 41 0;
+#X connect 38 0 37 0;
+#X connect 39 0 33 0;
+#X connect 39 0 38 0;
+#X connect 39 1 35 0;
+#X connect 39 1 36 0;
+#X connect 39 2 35 0;
+#X connect 39 2 38 0;
+#X connect 40 0 22 0;
+#X connect 40 1 23 0;
+#X connect 40 2 24 0;
+#X connect 40 3 18 0;
+#X connect 40 4 19 0;
+#X connect 40 5 20 0;
+#X connect 40 6 21 0;
+#X connect 40 7 25 0;
+#X connect 40 8 3 0;
+#X connect 40 9 4 0;
+#X connect 40 10 5 0;
+#X connect 40 11 6 0;
+#X connect 40 12 31 0;
+#X connect 41 0 31 0;
+#X connect 41 1 6 0;
+#X connect 41 2 5 0;
+#X connect 41 3 4 0;
+#X connect 41 4 3 0;
+#X connect 41 5 25 0;
+#X connect 41 6 21 0;
+#X connect 41 7 20 0;
+#X connect 41 8 19 0;
+#X connect 41 9 18 0;
+#X connect 41 10 24 0;
+#X connect 41 11 23 0;
+#X connect 41 12 22 0;
+#X restore 660 47 pd cycle_chromatic;
+#X obj 771 1034 r key;
+#X floatatom 771 1058 5 0 0 0 - - -;
+#X obj 820 1074 +;
+#X obj 886 1034 *;
+#X msg 930 1017 12;
+#X floatatom 886 1058 5 0 0 0 - - -;
+#X obj 930 982 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 886 990 int;
+#X obj 1019 1505 lop~;
+#N canvas 637 194 450 300 cycle_minorscale 0;
+#X obj 112 79 spigot;
+#X obj 145 31 tgl 15 0 empty minorscale_switch empty 0 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 78 29 r symfoo;
+#X obj 420 381 s delaybox;
+#X obj 339 381 s togglebox;
+#X obj 81 430 s addstep;
+#X msg -14 386 2;
+#X msg 60 386 5;
+#X msg 97 386 7;
+#X msg 208 386 12;
+#X msg -49 386 0;
+#X obj 102 232 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 128 232 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 154 232 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 180 232 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 24 232 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 50 232 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 76 232 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 206 232 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 112 180 cycle 8;
+#X obj 275 -23 hradio 15 1 0 2 empty direction empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 328 108 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 273 107 spigot;
+#X obj 273 75 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 416 108 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 361 107 spigot;
+#X obj 361 75 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 275 20 route 0 1 2;
+#X obj 459 55 random;
+#X obj 174 181 cycle 8;
+#X msg 23 386 3;
+#X msg 134 386 8;
+#X msg 171 386 10;
+#X text 165 418 Steps for minor scale;
+#X connect 0 0 22 0;
+#X connect 0 0 25 0;
+#X connect 1 0 0 1;
+#X connect 2 0 0 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
+#X connect 9 0 5 0;
+#X connect 10 0 5 0;
+#X connect 11 0 4 0;
+#X connect 11 0 3 0;
+#X connect 11 0 7 0;
+#X connect 12 0 4 0;
+#X connect 12 0 3 0;
+#X connect 12 0 8 0;
+#X connect 13 0 4 0;
+#X connect 13 0 3 0;
+#X connect 13 0 31 0;
+#X connect 14 0 4 0;
+#X connect 14 0 3 0;
+#X connect 14 0 32 0;
+#X connect 15 0 4 0;
+#X connect 15 0 3 0;
+#X connect 15 0 10 0;
+#X connect 16 0 4 0;
+#X connect 16 0 3 0;
+#X connect 16 0 6 0;
+#X connect 17 0 4 0;
+#X connect 17 0 3 0;
+#X connect 17 0 30 0;
+#X connect 18 0 4 0;
+#X connect 18 0 3 0;
+#X connect 18 0 9 0;
+#X connect 19 0 15 0;
+#X connect 19 1 16 0;
+#X connect 19 2 17 0;
+#X connect 19 3 11 0;
+#X connect 19 4 12 0;
+#X connect 19 5 13 0;
+#X connect 19 6 14 0;
+#X connect 19 7 18 0;
+#X connect 20 0 27 0;
+#X connect 21 0 22 1;
+#X connect 22 0 21 0;
+#X connect 22 0 19 0;
+#X connect 23 0 22 0;
+#X connect 24 0 25 1;
+#X connect 25 0 24 0;
+#X connect 25 0 29 0;
+#X connect 26 0 25 0;
+#X connect 27 0 21 0;
+#X connect 27 0 26 0;
+#X connect 27 1 23 0;
+#X connect 27 1 24 0;
+#X connect 27 2 23 0;
+#X connect 27 2 26 0;
+#X connect 29 0 18 0;
+#X connect 29 1 14 0;
+#X connect 29 2 13 0;
+#X connect 29 3 12 0;
+#X connect 29 4 11 0;
+#X connect 29 5 17 0;
+#X connect 29 6 16 0;
+#X connect 29 7 15 0;
+#X connect 30 0 5 0;
+#X connect 31 0 5 0;
+#X connect 32 0 5 0;
+#X restore 660 27 pd cycle_minorscale;
+#X obj 1019 1360 *~;
+#N canvas 990 285 450 300 taptempo 0;
+#X obj 51 114 sel 1 2;
+#X floatatom 57 196 5 0 0 0 - - -;
+#X msg 50 164 1;
+#X msg 83 164 0;
+#X obj 83 141 t b b;
+#X msg 103 113 0;
+#X obj 54 88 +;
+#X floatatom 82 90 5 0 0 0 - - -;
+#X obj 57 248 timer;
+#X obj 54 36 bng 15 250 50 0 empty tapbutton empty 0 -6 0 10 -4034
+-1 -1;
+#X msg 54 60 1;
+#X obj 57 221 sel 1 0;
+#X floatatom 57 272 5 0 0 0 - - -;
+#X text 78 34 <-- click twice to determine the tempo;
+#X text 96 272 time passed between two clicks (in ms.);
+#X text 40 -23 Posted by tchihan 2008;
+#X text 40 -62 Code in this subpatch was sourced from https://forum.pdpatchrepo.info/topic/1494/tap-tempo
+and edited.;
+#X obj 215 176 s tempo_interval;
+#X connect 0 0 2 0;
+#X connect 0 1 4 0;
+#X connect 1 0 11 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 4 1 5 0;
+#X connect 5 0 7 0;
+#X connect 6 0 7 0;
+#X connect 7 0 6 1;
+#X connect 7 0 0 0;
+#X connect 8 0 12 0;
+#X connect 9 0 10 0;
+#X connect 10 0 6 0;
+#X connect 11 0 8 0;
+#X connect 11 1 8 1;
+#X connect 12 0 17 0;
+#X restore 499 -34 pd taptempo;
+#X obj 1253 970 r tempo_interval;
+#X obj 1019 1396 *~;
+#X msg 1065 1369 0.5;
+#X text 1106 1378 Attack and Delay \, maybe find a way to make it affected
+by note duration;
+#N canvas 953 54 450 300 cycle_minortriad 0;
+#X obj 212 119 cycle 4;
+#X obj 178 29 r symfoo;
+#X msg 114 240 7;
+#X msg 151 240 12;
+#X msg 40 240 0;
+#X obj 206 171 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 232 171 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 258 171 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 284 171 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 339 245 s delaybox;
+#X obj 252 245 s togglebox;
+#X obj 74 293 s addstep;
+#X obj 278 120 cycle 4;
+#X obj 313 -34 hradio 15 1 0 2 empty direction empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 366 97 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 311 96 spigot;
+#X obj 311 64 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 149 85 spigot;
+#X obj 198 59 tgl 15 0 empty minortriad_switch empty 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 454 97 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 399 96 spigot;
+#X obj 399 64 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 313 9 route 0 1 2;
+#X obj 497 21 random;
+#X msg 77 240 3;
+#X text 7 195 Steps for minor triad;
+#X connect 0 0 5 0;
+#X connect 0 1 6 0;
+#X connect 0 2 7 0;
+#X connect 0 3 8 0;
+#X connect 1 0 17 0;
+#X connect 2 0 11 0;
+#X connect 3 0 11 0;
+#X connect 4 0 11 0;
+#X connect 5 0 4 0;
+#X connect 5 0 10 0;
+#X connect 5 0 9 0;
+#X connect 6 0 24 0;
+#X connect 6 0 10 0;
+#X connect 6 0 9 0;
+#X connect 7 0 2 0;
+#X connect 7 0 10 0;
+#X connect 7 0 9 0;
+#X connect 8 0 3 0;
+#X connect 8 0 10 0;
+#X connect 8 0 9 0;
+#X connect 12 0 8 0;
+#X connect 12 1 7 0;
+#X connect 12 2 6 0;
+#X connect 12 3 5 0;
+#X connect 13 0 22 0;
+#X connect 14 0 15 1;
+#X connect 15 0 14 0;
+#X connect 15 0 0 0;
+#X connect 16 0 15 0;
+#X connect 17 0 15 0;
+#X connect 17 0 20 0;
+#X connect 18 0 17 1;
+#X connect 19 0 20 1;
+#X connect 20 0 19 0;
+#X connect 20 0 12 0;
+#X connect 21 0 20 0;
+#X connect 22 0 14 0;
+#X connect 22 0 21 0;
+#X connect 22 1 16 0;
+#X connect 22 1 19 0;
+#X connect 22 2 16 0;
+#X connect 22 2 21 0;
+#X connect 24 0 11 0;
+#X restore 660 -14 pd cycle_minortriad;
+#X obj 1253 995 / 2;
+#X obj 806 599 bng 15 250 50 0 empty initialise empty 17 7 0 10 -262144
+-1 -1;
+#X obj 512 175 bng 15 250 50 0 empty initialise empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1108 1225 r symfoo;
+#X obj 1216 176 bng 15 250 50 0 empty initialise empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1065 1349 bng 15 250 50 0 empty initialise empty 17 7 0 10 -262144
+-1 -1;
+#X obj 382 -36 bng 30 250 50 0 initialise empty empty 17 7 0 10 -258113
+-1 -1;
+#X msg 1327 853 0.01;
+#X obj 1327 834 bng 15 250 50 0 empty initialise empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1216 970 bng 15 250 50 0 empty initialise empty 17 7 0 10 -262144
+-1 -1;
+#X msg 1216 995 500;
+#X obj 841 167 bng 15 250 50 0 empty initialise empty 17 7 0 10 -262144
+-1 -1;
+#X obj 850 812 bng 15 250 50 0 empty initialise empty 17 7 0 10 -262144
+-1 -1;
+#X msg 850 832 0;
+#X obj 817 1392 vsl 15 128 0 127 0 0 main_cutoffslider empty empty
+0 -9 0 10 -262144 -1 -1 0 1;
+#X floatatom 1397 1003 5 0 0 0 - - -;
+#X obj 1108 1247 bng 15 250 50 0 empty initialise empty 0 -6 0 8 -262144
+-1 -1;
+#N canvas 366 330 1117 659 ADSR 0;
+#X obj 316 65 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 316 119 1;
+#X msg 316 119 1;
+#X msg 365 117 0;
+#X floatatom 316 178 5 0 0 0 - - -;
+#X obj 365 90 delay 500;
+#X floatatom 488 174 5 0 0 0 - - -;
+#X floatatom 489 573 5 0 0 0 - - -;
+#X text 626 90 Attack Duration;
+#X text 646 112 Decay Duration;
+#X obj 489 465 vline~;
+#X obj 489 546 snapshot~;
+#X obj 500 517 metro 1;
+#X obj 500 492 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 491 91 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 635 1;
+#X floatatom 697 421 5 0 0 0 - - -;
+#X floatatom 511 143 5 0 0 0 - - -;
+#X obj 514 114 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 635 1;
+#X obj 432 159 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 488 289 spigot;
+#X obj 432 246 delay 1;
+#X obj 521 263 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 489 605 outlet;
+#X obj 697 396 * 2;
+#X obj 488 411 pack f f f f;
+#X text 710 138 Sustain Duration;
+#X obj 575 139 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4445 1;
+#X obj 605 165 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 635 1;
+#X text 739 163 Release Time;
+#X floatatom 601 279 5 0 0 0 - - -;
+#X floatatom 572 200 5 0 0 0 - - -;
+#X obj 557 276 +;
+#X obj 537 230 +;
+#X obj 520 196 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 557 253 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 488 371 5 0 0 0 - - -;
+#X floatatom 528 371 5 0 0 0 - - -;
+#X floatatom 608 371 5 0 0 0 - - -;
+#X floatatom 568 371 5 0 0 0 - - -;
+#X obj 432 118 inlet;
+#X obj 549 -55 inlet;
+#X floatatom 549 -28 5 0 0 0 - - -;
+#X floatatom 498 39 5 0 0 0 - - -;
+#X floatatom 538 39 5 0 0 0 - - -;
+#X floatatom 588 39 5 0 0 0 - - -;
+#X floatatom 628 39 5 0 0 0 - - -;
+#X msg 597 -54 1000;
+#X msg 489 438 1 \$1 \, 0.7 \$2 \$1 \, 0 \$3 \$4;
+#X obj 554 477 bng 15 250 50 0 empty initialise empty 17 7 0 10 -262144
+-1 -1;
+#X obj 628 8 * 0.1;
+#X obj 588 8 * 0.7;
+#X obj 498 8 * 0.1;
+#X obj 544 8 * 0.1;
+#X connect 0 0 1 0;
+#X connect 0 0 5 0;
+#X connect 1 0 4 0;
+#X connect 3 0 4 0;
+#X connect 5 0 3 0;
+#X connect 6 0 19 0;
+#X connect 6 0 32 0;
+#X connect 7 0 22 0;
+#X connect 10 0 11 0;
+#X connect 11 0 7 0;
+#X connect 12 0 11 0;
+#X connect 13 0 12 0;
+#X connect 14 0 6 0;
+#X connect 16 0 33 0;
+#X connect 16 0 32 1;
+#X connect 17 0 16 0;
+#X connect 18 0 20 0;
+#X connect 18 0 21 0;
+#X connect 18 0 6 0;
+#X connect 19 0 35 0;
+#X connect 20 0 21 0;
+#X connect 20 0 24 0;
+#X connect 21 0 19 1;
+#X connect 23 0 15 0;
+#X connect 24 0 47 0;
+#X connect 26 0 30 0;
+#X connect 27 0 29 0;
+#X connect 29 0 38 0;
+#X connect 30 0 31 1;
+#X connect 30 0 34 0;
+#X connect 31 0 37 0;
+#X connect 32 0 31 0;
+#X connect 32 0 36 0;
+#X connect 33 0 32 0;
+#X connect 34 0 31 0;
+#X connect 35 0 24 0;
+#X connect 36 0 24 1;
+#X connect 37 0 24 3;
+#X connect 38 0 24 2;
+#X connect 39 0 18 0;
+#X connect 40 0 41 0;
+#X connect 41 0 49 0;
+#X connect 41 0 50 0;
+#X connect 41 0 51 0;
+#X connect 41 0 52 0;
+#X connect 42 0 14 0;
+#X connect 43 0 17 0;
+#X connect 44 0 26 0;
+#X connect 45 0 27 0;
+#X connect 46 0 41 0;
+#X connect 47 0 10 0;
+#X connect 48 0 13 0;
+#X connect 49 0 45 0;
+#X connect 50 0 44 0;
+#X connect 51 0 42 0;
+#X connect 52 0 43 0;
+#X restore 1108 1267 pd ADSR;
+#N canvas 953 22 958 988 cycles 0;
+#X obj 780 -96 inlet;
+#X obj 100 153 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 100 179 s triad_switch;
+#X obj 451 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 539 204 s majorscale_switch;
+#X obj 574 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 663 37 hradio 15 1 0 5 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 54 152 spigot;
+#X obj 54 129 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 384 148 spigot;
+#X obj 384 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 507 148 spigot;
+#X obj 507 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 694 145 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 626 144 spigot;
+#X obj 626 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 711 199 s minorscale_switch;
+#X obj 663 62 route 0 1 2 3 4;
+#X obj 856 171 s chromatic_switch;
+#X obj 856 143 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 788 142 spigot;
+#X obj 788 119 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 368 195 s minortriad_switch;
+#X msg 718 -12 0;
+#X msg 751 -13 1;
+#X obj 780 -65 cycle 5;
+#X msg 786 -14 2;
+#X msg 817 -14 3;
+#X msg 847 -14 4;
+#X connect 0 0 25 0;
+#X connect 1 0 2 0;
+#X connect 1 0 7 1;
+#X connect 3 0 9 1;
+#X connect 3 0 22 0;
+#X connect 5 0 11 1;
+#X connect 5 0 4 0;
+#X connect 6 0 17 0;
+#X connect 7 0 1 0;
+#X connect 8 0 7 0;
+#X connect 9 0 3 0;
+#X connect 10 0 9 0;
+#X connect 11 0 5 0;
+#X connect 12 0 11 0;
+#X connect 13 0 14 1;
+#X connect 13 0 16 0;
+#X connect 14 0 13 0;
+#X connect 15 0 14 0;
+#X connect 17 0 1 0;
+#X connect 17 0 10 0;
+#X connect 17 0 12 0;
+#X connect 17 0 15 0;
+#X connect 17 0 21 0;
+#X connect 17 1 3 0;
+#X connect 17 1 8 0;
+#X connect 17 1 12 0;
+#X connect 17 1 15 0;
+#X connect 17 1 21 0;
+#X connect 17 2 5 0;
+#X connect 17 2 8 0;
+#X connect 17 2 10 0;
+#X connect 17 2 15 0;
+#X connect 17 2 21 0;
+#X connect 17 3 13 0;
+#X connect 17 3 8 0;
+#X connect 17 3 10 0;
+#X connect 17 3 12 0;
+#X connect 17 3 21 0;
+#X connect 17 4 19 0;
+#X connect 17 4 15 0;
+#X connect 17 4 12 0;
+#X connect 17 4 10 0;
+#X connect 17 4 8 0;
+#X connect 19 0 20 1;
+#X connect 19 0 18 0;
+#X connect 20 0 19 0;
+#X connect 21 0 20 0;
+#X connect 23 0 6 0;
+#X connect 24 0 6 0;
+#X connect 25 0 23 0;
+#X connect 25 1 24 0;
+#X connect 25 2 26 0;
+#X connect 25 3 27 0;
+#X connect 25 4 28 0;
+#X connect 26 0 6 0;
+#X connect 27 0 6 0;
+#X connect 28 0 6 0;
+#X restore 512 223 pd cycles;
+#X text 532 174 Switches through different arpeggio cycles;
+#X text 864 165 Determinies the direction of the arpeggio;
+#N canvas 477 497 450 300 direction 0;
+#X obj 81 41 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 81 69 s direction;
+#X obj 61 -17 cycle 2;
+#X msg 61 10 0;
+#X msg 100 10 1;
+#X obj 61 -44 inlet;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 2 0;
+#X restore 841 231 pd direction;
+#X text 422 -31 Initiate;
+#X floatatom 512 374 5 0 0 0 - - -;
+#X obj 512 470 * -1;
+#X obj 512 447 - 126;
+#X obj 78 96 notein 1;
+#N canvas 572 80 450 300 midibutton 0;
+#X obj 45 -40 inlet;
+#X obj 45 94 outlet;
+#X obj 45 -6 / 127;
+#X floatatom 125 16 5 0 0 0 - - -;
+#X obj 125 38 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 45 60 spigot;
+#X obj 45 28 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 1;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X restore 123 314 pd midibutton;
+#X obj 75 189 notein 2;
+#X obj 78 291 notein 3;
+#X obj 123 337 tgl 15 0 power_switch empty empty 17 7 0 10 -262144
+-1 -1 0 1;
+#X text 144 337 On/Off;
+#N canvas 572 80 450 300 midibutton 0;
+#X obj 45 -40 inlet;
+#X obj 45 94 outlet;
+#X obj 45 -6 / 127;
+#X floatatom 125 16 5 0 0 0 - - -;
+#X obj 125 38 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 45 60 spigot;
+#X obj 45 28 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 1;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X restore 123 125 pd midibutton;
+#X symbolatom 512 199 10 0 0 0 - - -;
+#X symbolatom 841 199 10 0 0 0 - - -;
+#X symbolatom 1171 1085 10 0 0 0 - - -;
+#N canvas 572 80 450 300 midibutton 0;
+#X obj 45 -40 inlet;
+#X obj 45 94 outlet;
+#X obj 45 -6 / 127;
+#X floatatom 125 16 5 0 0 0 - - -;
+#X obj 125 38 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 45 60 spigot;
+#X obj 45 28 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 1;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X restore 120 222 pd midibutton;
+#X obj 120 266 s button2;
+#X obj 120 245 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 512 114 r button2;
+#X obj 512 145 spigot;
+#X obj 576 116 tgl 15 0 empty cycle_switch empty 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 840 112 r button2;
+#X obj 840 141 spigot;
+#X obj 908 113 tgl 15 0 empty direction_switch empty 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 1216 149 spigot;
+#X obj 1284 125 tgl 15 0 empty key_switch empty 17 7 0 10 -262144 -1
+-1 0 1;
+#X symbolatom 1216 203 10 0 0 0 - - -;
+#N canvas 953 22 958 738 keys 0;
+#X obj 303 -26 inlet;
+#X obj 366 101 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 392 101 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 418 101 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 444 101 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 236 101 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 262 101 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 288 101 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 314 101 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 158 101 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 184 101 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 210 101 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 340 101 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 56 242 60;
+#X msg 90 242 61;
+#X msg 132 242 62;
+#X msg 176 242 63;
+#X msg 218 242 64;
+#X msg 262 241 65;
+#X msg 315 243 66;
+#X msg 364 242 67;
+#X msg 410 241 68;
+#X msg 451 242 69;
+#X msg 499 242 70;
+#X msg 536 242 71;
+#X obj 303 -1 cycle 12;
+#X obj 250 336 s key;
+#X connect 0 0 25 0;
+#X connect 1 0 21 0;
+#X connect 2 0 22 0;
+#X connect 3 0 23 0;
+#X connect 4 0 24 0;
+#X connect 5 0 16 0;
+#X connect 6 0 17 0;
+#X connect 7 0 18 0;
+#X connect 8 0 19 0;
+#X connect 9 0 13 0;
+#X connect 10 0 14 0;
+#X connect 11 0 15 0;
+#X connect 12 0 20 0;
+#X connect 13 0 26 0;
+#X connect 14 0 26 0;
+#X connect 15 0 26 0;
+#X connect 16 0 26 0;
+#X connect 17 0 26 0;
+#X connect 18 0 26 0;
+#X connect 19 0 26 0;
+#X connect 20 0 26 0;
+#X connect 21 0 26 0;
+#X connect 22 0 26 0;
+#X connect 23 0 26 0;
+#X connect 24 0 26 0;
+#X connect 25 0 9 0;
+#X connect 25 1 10 0;
+#X connect 25 2 11 0;
+#X connect 25 3 5 0;
+#X connect 25 4 6 0;
+#X connect 25 5 7 0;
+#X connect 25 6 8 0;
+#X connect 25 7 12 0;
+#X connect 25 8 1 0;
+#X connect 25 9 2 0;
+#X connect 25 10 3 0;
+#X connect 25 11 4 0;
+#X restore 1216 227 pd keys;
+#X obj 79 364 notein 4;
+#N canvas 572 80 450 300 midibutton 0;
+#X obj 45 -40 inlet;
+#X obj 45 94 outlet;
+#X obj 45 -6 / 127;
+#X floatatom 125 16 5 0 0 0 - - -;
+#X obj 125 38 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 45 60 spigot;
+#X obj 45 28 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 1;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X restore 124 393 pd midibutton;
+#N canvas 572 80 450 300 midibutton 0;
+#X obj 45 -40 inlet;
+#X obj 45 94 outlet;
+#X obj 45 -6 / 127;
+#X floatatom 125 16 5 0 0 0 - - -;
+#X obj 125 38 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 45 60 spigot;
+#X obj 45 28 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 1;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X restore 124 546 pd midibutton;
+#X obj 79 519 notein 5;
+#N canvas 572 80 450 300 midibutton 0;
+#X obj 45 -40 inlet;
+#X obj 45 94 outlet;
+#X obj 45 -6 / 127;
+#X floatatom 125 16 5 0 0 0 - - -;
+#X obj 125 38 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 45 60 spigot;
+#X obj 45 28 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 1;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X restore 120 639 pd midibutton;
+#X obj 75 612 notein 6;
+#X text 615 -61 Contain different note cycles for arpeggio;
+#X text 899 -61 Contains function cycle for button2;
+#X text 910 -8 Contains function cycle for pot;
+#X obj 512 352 spigot;
+#X obj 559 323 tgl 15 0 empty cutoff_switch empty 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 512 322 r pot;
+#X obj 80 486 s pot;
+#X obj 933 360 spigot;
+#X obj 980 331 tgl 15 0 empty offset_switch empty 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 933 330 r pot;
+#X obj 933 471 - 4;
+#X obj 1201 484 + 0.01;
+#X obj 1201 362 spigot;
+#X obj 1248 333 tgl 15 0 empty notelength_switch empty 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 1201 332 r pot;
+#X obj 933 448 / 15.75;
+#X obj 1201 461 / 157.5;
+#X floatatom 933 387 5 0 0 0 - - -;
+#X floatatom 1201 386 5 0 0 0 - - -;
+#X text 470 -61 Contains tempo tracker;
+#N canvas 320 175 1136 491 pot_function_cycle 0;
+#X symbolatom 784 -77 10 0 0 0 - - -;
+#X obj 110 303 tgl 15 0 cutoff_switch empty empty 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 461 299 tgl 15 0 offset_switch empty empty 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 584 299 tgl 15 0 notelength_switch empty empty 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 673 47 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 64 302 spigot;
+#X obj 64 279 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 394 298 spigot;
+#X obj 394 271 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 517 298 spigot;
+#X obj 517 271 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 657 -2 0;
+#X msg 690 -3 1;
+#X msg 725 -4 2;
+#X obj 784 -103 r pot_function_change;
+#X obj 672 72 route 0 1 2;
+#X obj 350 -38 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 784 -49 cycle 3;
+#X text 106 340 Toggle for cutoff frequency;
+#X text 354 334 Toggle for octave;
+#X text 515 337 Toggle for notelength;
+#X connect 0 0 17 0;
+#X connect 1 0 5 1;
+#X connect 2 0 7 1;
+#X connect 3 0 9 1;
+#X connect 4 0 15 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 2 0;
+#X connect 8 0 7 0;
+#X connect 9 0 3 0;
+#X connect 10 0 9 0;
+#X connect 11 0 4 0;
+#X connect 12 0 4 0;
+#X connect 13 0 4 0;
+#X connect 14 0 0 0;
+#X connect 15 0 1 0;
+#X connect 15 0 8 0;
+#X connect 15 0 10 0;
+#X connect 15 1 2 0;
+#X connect 15 1 6 0;
+#X connect 15 1 10 0;
+#X connect 15 2 3 0;
+#X connect 15 2 6 0;
+#X connect 15 2 8 0;
+#X connect 15 3 6 0;
+#X connect 15 3 8 0;
+#X connect 15 3 10 0;
+#X connect 16 0 0 0;
+#X connect 17 0 11 0;
+#X connect 17 1 12 0;
+#X connect 17 2 13 0;
+#X restore 932 19 pd pot_function_cycle;
+#X obj 382 -57 loadbang;
+#X obj 2 -71 cnv 15 200 40 empty empty Arpeggiecho 20 12 0 15 -233017
+-66577 0;
+#X obj 123 164 s button_2_function_change;
+#X obj 1040 1484 r lopvalue;
+#X obj 1232 1484 r hipvalue;
+#N canvas 990 285 450 300 lop/hip_switch 0;
+#X obj 156 59 inlet;
+#X obj 183 181 hradio 15 1 0 2 empty filter empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 183 203 route 0 1 2;
+#X msg 183 154 0;
+#X msg 221 155 1;
+#X obj 182 129 cycle 2;
+#X obj 182 105 symbol foo;
+#X msg 134 106 0;
+#X obj 134 129 s zero;
+#X obj 204 233 s rt1;
+#X obj 249 233 s rt2;
+#X obj 158 233 s rt0;
+#X connect 0 0 7 0;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 2 0 11 0;
+#X connect 2 1 9 0;
+#X connect 2 2 10 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 3 0;
+#X connect 5 1 4 0;
+#X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X restore 806 623 pd lop/hip_switch;
+#N canvas 725 364 450 300 filters 0;
+#X obj 104 -4534 mtof;
+#X obj 104 -4766 vsl 15 128 0 127 0 0 empty main_cutoffslider empty
+0 -9 0 10 -262144 -1 -1 0 1;
+#X floatatom 104 -4497 5 0 0 0 - - -;
+#X obj -151 -4533 mtof;
+#X obj -151 -4768 vsl 15 128 0 127 0 0 empty main_cutoffslider empty
+0 -9 0 10 -262144 -1 -1 0 1;
+#X floatatom -151 -4491 5 0 0 0 - - -;
+#X obj -22 -4423 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+14.9512 14.9512;
+#X obj -67 -4446 spigot;
+#X obj -150 -4391 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 211 -4421 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 12543.9;
+#X obj 165 -4444 spigot;
+#X obj 82 -4388 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 104 -4792 0;
+#X obj 82 -4416 delay;
+#X obj -150 -4419 delay;
+#X obj -151 -4563 * -1;
+#X msg -151 -4793 0;
+#X floatatom -151 -4632 5 0 0 0 - - -;
+#X floatatom -151 -4586 5 0 0 0 - - -;
+#X obj -151 -4609 - 127;
+#X obj 60 -4792 r zero;
+#X obj -195 -4793 r zero;
+#X obj -151 -4814 r rt1;
+#X obj -150 -4447 r rt1;
+#X obj -112 -4447 r rt2;
+#X obj 120 -4444 r rt2;
+#X obj 82 -4444 r rt0;
+#X obj 211 -4444 r rt1;
+#X obj -22 -4446 r rt0;
+#X obj 104 -4816 r rt0;
+#X obj -67 -4397 s lopvalue;
+#X obj 104 -4558 * -1;
+#X floatatom 104 -4627 5 0 0 0 - - -;
+#X floatatom 104 -4581 5 0 0 0 - - -;
+#X obj 104 -4604 - 127;
+#X obj 165 -4395 s hipvalue;
+#X text -211 -4837 Low-pass filter cutoff frequency;
+#X text 16 -4835 High-pass filter cutoff frequency;
+#X connect 0 0 2 0;
+#X connect 0 0 10 0;
+#X connect 1 0 32 0;
+#X connect 2 0 10 0;
+#X connect 3 0 5 0;
+#X connect 3 0 7 0;
+#X connect 4 0 17 0;
+#X connect 5 0 7 0;
+#X connect 6 0 7 1;
+#X connect 7 0 6 0;
+#X connect 7 0 30 0;
+#X connect 8 0 7 0;
+#X connect 9 0 10 1;
+#X connect 10 0 9 0;
+#X connect 10 0 35 0;
+#X connect 11 0 10 0;
+#X connect 12 0 1 0;
+#X connect 13 0 11 0;
+#X connect 14 0 8 0;
+#X connect 15 0 3 0;
+#X connect 16 0 4 0;
+#X connect 17 0 19 0;
+#X connect 18 0 15 0;
+#X connect 19 0 18 0;
+#X connect 20 0 1 0;
+#X connect 21 0 4 0;
+#X connect 22 0 16 0;
+#X connect 23 0 14 0;
+#X connect 24 0 14 0;
+#X connect 25 0 13 0;
+#X connect 26 0 13 0;
+#X connect 27 0 9 0;
+#X connect 28 0 6 0;
+#X connect 29 0 12 0;
+#X connect 31 0 0 0;
+#X connect 32 0 34 0;
+#X connect 33 0 31 0;
+#X connect 34 0 33 0;
+#X restore 1231 -34 pd filters;
+#X text 1146 -58 Contains low pass and high pass filters;
+#X text 139 93 Button linked to channel 1 switches function of button
+linked to channel 2;
+#X text 135 291 Button linked to channel 3 turns arpeggiator on/off.
+;
+#X text 135 361 Button linked to channel 4 switches function of potentiometer/CC
+which is linked to channel 0;
+#X text 132 188 Button linked to channel 2 Can affect arpeggio cycle
+or direction.;
+#X text 150 461 Potentiometer/CC linked to channel 0 Can affect lop
+and hip filters \, octave offset or length of individual notes.;
+#X text 607 1418 Filter cutoff frequency slider;
+#X text 884 580 Determines which type of filter is active.;
+#X text 1239 175 Determines which key the arpeggio is in.;
+#X obj 1201 509 s notelength;
+#X obj 1368 840 r notelength;
+#X obj 933 495 s offset;
+#X obj 886 821 r offset;
+#X text 973 391 Determines the octave offset.;
+#X text 1241 390 Determines the individual note length.;
+#X obj 512 493 s cutoff_frequency;
+#X obj 817 1369 r cutoff_frequency;
+#X text 551 379 Determines the cutoff frequency.;
+#X text 912 908 Octave offset slider;
+#X text 1391 928 Individual note length slider;
+#X obj 123 145 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 125 413 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 125 432 s pot_function_change;
+#X obj 933 406 - 50;
+#X obj 933 428 * 3.15;
+#X obj 1201 414 - 50;
+#X obj 1201 436 * 3.15;
+#X obj 512 398 - 50;
+#X obj 512 420 * 3.15;
+#X obj 510 607 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 510 631 s tapbutton;
+#X text 535 605 <-- click twice to determine the tempo;
+#X floatatom 588 666 5 0 0 0 - - -;
+#X obj 588 622 counter 1;
+#X obj 588 644 + 1;
+#X text 629 667 No. of taps;
+#X obj 124 566 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 806 542 r button6;
+#X obj 118 667 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 119 688 s button6;
+#X text 16 9 Error 'tgl: no method for symbol' is created in cycle
+subpatches but it is necessary and doesnt affect synthesiser;
+#X text 558 413 Roughly normalises values to be between 0 and 126 due
+to faulty sensor. Only working on 3V wheras meant to be 5V.;
+#N canvas 151 32 1136 491 button_2_function_cycle 0;
+#X symbolatom 784 -77 10 0 0 0 - - -;
+#X obj 110 303 tgl 15 0 cycle_switch empty empty 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 461 299 tgl 15 0 direction_switch empty empty 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 673 47 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 64 302 spigot;
+#X obj 64 279 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 394 298 spigot;
+#X obj 394 271 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 657 -2 0;
+#X msg 690 -3 1;
+#X obj 784 -51 cycle 3;
+#X obj 635 293 tgl 15 0 key_switch empty empty 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 569 292 spigot;
+#X obj 569 265 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 672 72 route 0 1 2;
+#X msg 724 -2 2;
+#X obj 623 -70 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 784 -103 r button_2_function_change;
+#X text 101 336 Toggle for cycle switch;
+#X text 372 338 Toggle for direction switch;
+#X text 604 333 Toggle for key switch;
+#X connect 0 0 10 0;
+#X connect 1 0 4 1;
+#X connect 2 0 6 1;
+#X connect 3 0 14 0;
+#X connect 4 0 1 0;
+#X connect 5 0 4 0;
+#X connect 6 0 2 0;
+#X connect 7 0 6 0;
+#X connect 8 0 3 0;
+#X connect 9 0 3 0;
+#X connect 10 0 8 0;
+#X connect 10 1 9 0;
+#X connect 10 2 15 0;
+#X connect 11 0 12 1;
+#X connect 12 0 11 0;
+#X connect 13 0 12 0;
+#X connect 14 0 1 0;
+#X connect 14 0 7 0;
+#X connect 14 0 13 0;
+#X connect 14 1 2 0;
+#X connect 14 1 5 0;
+#X connect 14 1 13 0;
+#X connect 14 2 5 0;
+#X connect 14 2 7 0;
+#X connect 14 2 11 0;
+#X connect 15 0 3 0;
+#X connect 16 0 0 0;
+#X connect 17 0 0 0;
+#X restore 922 -36 pd button_2_function_cycle;
+#X obj 124 585 s button5;
+#X obj 510 548 r button5;
+#X obj 1216 124 r button2;
+#X text 144 522 Button linked to channel 5 changes tempo;
+#X text 133 611 Button linked to channel 6 determines whihc filter
+is active.;
+#X text 1052 971 Sets initial note interval;
+#X text 1168 818 Sets initial note length;
+#X text 688 789 Sets initial octave offset;
+#X connect 0 0 8 1;
+#X connect 1 0 107 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 39 0;
+#X connect 7 0 15 0;
+#X connect 8 0 2 0;
+#X connect 9 0 5 1;
+#X connect 12 0 13 0;
+#X connect 13 0 14 1;
+#X connect 13 0 63 1;
+#X connect 14 0 9 0;
+#X connect 15 0 81 0;
+#X connect 16 0 12 0;
+#X connect 16 0 15 1;
+#X connect 16 0 18 0;
+#X connect 17 0 18 1;
+#X connect 17 0 19 0;
+#X connect 17 0 61 0;
+#X connect 18 0 12 1;
+#X connect 19 0 16 0;
+#X connect 20 0 6 0;
+#X connect 20 0 6 1;
+#X connect 21 0 35 0;
+#X connect 21 0 36 0;
+#X connect 23 0 9 0;
+#X connect 24 0 14 0;
+#X connect 26 0 8 0;
+#X connect 29 0 30 0;
+#X connect 30 0 31 0;
+#X connect 31 0 0 0;
+#X connect 32 0 34 0;
+#X connect 33 0 32 1;
+#X connect 34 0 31 1;
+#X connect 35 0 33 0;
+#X connect 35 0 31 0;
+#X connect 36 0 32 0;
+#X connect 37 0 6 0;
+#X connect 37 0 6 1;
+#X connect 39 0 42 0;
+#X connect 41 0 46 0;
+#X connect 42 0 37 0;
+#X connect 42 0 20 0;
+#X connect 43 0 42 1;
+#X connect 46 0 16 0;
+#X connect 47 0 127 0;
+#X connect 48 0 79 0;
+#X connect 49 0 62 0;
+#X connect 50 0 93 0;
+#X connect 51 0 43 0;
+#X connect 53 0 17 0;
+#X connect 54 0 53 0;
+#X connect 55 0 56 0;
+#X connect 56 0 16 0;
+#X connect 57 0 80 0;
+#X connect 58 0 59 0;
+#X connect 59 0 21 0;
+#X connect 62 0 63 0;
+#X connect 63 0 39 1;
+#X connect 69 0 156 0;
+#X connect 70 0 144 0;
+#X connect 71 0 70 0;
+#X connect 72 1 78 0;
+#X connect 73 0 76 0;
+#X connect 74 1 82 0;
+#X connect 75 1 73 0;
+#X connect 78 0 149 0;
+#X connect 79 0 64 0;
+#X connect 80 0 67 0;
+#X connect 81 0 25 0;
+#X connect 82 0 84 0;
+#X connect 84 0 83 0;
+#X connect 85 0 86 0;
+#X connect 86 0 48 0;
+#X connect 87 0 86 1;
+#X connect 88 0 89 0;
+#X connect 89 0 57 0;
+#X connect 90 0 89 1;
+#X connect 91 0 50 0;
+#X connect 92 0 91 1;
+#X connect 93 0 94 0;
+#X connect 95 1 96 0;
+#X connect 96 0 150 0;
+#X connect 97 0 165 0;
+#X connect 98 1 97 0;
+#X connect 99 0 167 0;
+#X connect 100 1 99 0;
+#X connect 104 0 69 0;
+#X connect 105 0 104 1;
+#X connect 106 0 104 0;
+#X connect 108 0 118 0;
+#X connect 109 0 108 1;
+#X connect 110 0 108 0;
+#X connect 111 0 140 0;
+#X connect 112 0 138 0;
+#X connect 113 0 119 0;
+#X connect 114 0 113 1;
+#X connect 115 0 113 0;
+#X connect 116 0 111 0;
+#X connect 117 0 112 0;
+#X connect 118 0 152 0;
+#X connect 119 0 154 0;
+#X connect 122 0 52 0;
+#X connect 125 0 37 1;
+#X connect 126 0 20 1;
+#X connect 139 0 17 0;
+#X connect 141 0 21 0;
+#X connect 145 0 60 0;
+#X connect 149 0 124 0;
+#X connect 150 0 151 0;
+#X connect 152 0 153 0;
+#X connect 153 0 116 0;
+#X connect 154 0 155 0;
+#X connect 155 0 117 0;
+#X connect 156 0 157 0;
+#X connect 157 0 71 0;
+#X connect 158 0 159 0;
+#X connect 158 0 162 0;
+#X connect 162 0 163 0;
+#X connect 163 0 161 0;
+#X connect 165 0 172 0;
+#X connect 166 0 47 0;
+#X connect 167 0 168 0;
+#X connect 173 0 158 0;
+#X connect 174 0 91 0;
